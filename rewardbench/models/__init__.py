@@ -22,6 +22,8 @@ from transformers import (
     MixtralForCausalLM,
     T5ForConditionalGeneration,
 )
+from acecoder import Qwen2ForCausalRM
+
 
 from .armorm import ArmoRMPipeline
 from .beaver import BeaverCostPipeline, BeaverPipeline, LlamaForScore
@@ -37,6 +39,7 @@ from .pipeline import RewardBenchPipeline
 from .qrm import LlamaForRewardModelWithGating3, LlamaForRewardModelWithGating31
 from .shp import SHPPipeline
 from .slicpairpm import SlicPairPMPipeline
+from .acecoder import AceCoderPipeline
 from .starling import (
     LlamaForSequenceClassification,
     StarlingPipeline,
@@ -59,6 +62,20 @@ REWARD_MODEL_CONFIG = {
         "quantized": False,
         "custom_dialogue": False,
         "model_type": "Seq. Classifier",
+    },
+    "TIGER-Lab/AceCodeRM-7B": {
+        "model_builder": Qwen2ForCausalRM.from_pretrained,
+        "pipeline_builder": AceCoderPipeline,
+        "quantized": False,
+        "custom_dialogue": False,
+        "model_type": "Custom Classifier",
+    },
+    "TIGER-Lab/AceCodeRM-32B": {
+        "model_builder": Qwen2ForCausalRM.from_pretrained,
+        "pipeline_builder": AceCoderPipeline,
+        "quantized": False,
+        "custom_dialogue": False,
+        "model_type": "Custom Classifier",
     },
     "ShikaiChen/LDL-Reward-Gemma-2-27B-v0.1": {
         "model_builder": LDLRewardModel27B.from_pretrained,
