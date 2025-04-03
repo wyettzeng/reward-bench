@@ -1,0 +1,1 @@
+python scripts/run_rm.py --model=TIGER-Lab/AceCodeRM-32B --batch_size 1

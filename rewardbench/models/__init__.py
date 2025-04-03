@@ -68,14 +68,14 @@ REWARD_MODEL_CONFIG = {
         "pipeline_builder": AceCoderPipeline,
         "quantized": False,
         "custom_dialogue": False,
-        "model_type": "Custom Classifier",
+        "model_type": "Casual LM",
     },
     "TIGER-Lab/AceCodeRM-32B": {
         "model_builder": Qwen2ForCausalRM.from_pretrained,
         "pipeline_builder": AceCoderPipeline,
         "quantized": False,
         "custom_dialogue": False,
-        "model_type": "Custom Classifier",
+        "model_type": "Casual LM",
     },
     "ShikaiChen/LDL-Reward-Gemma-2-27B-v0.1": {
         "model_builder": LDLRewardModel27B.from_pretrained,

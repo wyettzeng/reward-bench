@@ -85,7 +85,6 @@ class AceCoderPipeline:
                 dim=-1, index=(masks.sum(dim=-1, keepdim=True) - 1)
             ) # find the last token (eos) in each sequence, a
             rm_scores = rm_scores.squeeze()
-            
         if return_inputs:
             return rm_scores, inputs
         else:
