@@ -337,6 +337,8 @@ def main():
                     # for each item in batch, record 1 if chosen > rejected
                     # extra score from dict within batched results (e.g. logits)
                     # [{'label': 'LABEL_1', 'score': 0.6826171875},... ]
+                    # if rewards_chosen.dim() == 0:
+                    #     continue
                     if isinstance(rewards_chosen[0], dict):
                         score_chosen_batch = [result["score"] for result in rewards_chosen]
                         score_rejected_batch = [result["score"] for result in rewards_rejected]
