@@ -40,6 +40,7 @@ from .qrm import LlamaForRewardModelWithGating3, LlamaForRewardModelWithGating31
 from .shp import SHPPipeline
 from .slicpairpm import SlicPairPMPipeline
 from .acecoder import AceCoderPipeline
+from .acecoder_llama import AceCoderPipeline_Llama, AceCoderLlamaForCausalRM
 from .starling import (
     LlamaForSequenceClassification,
     StarlingPipeline,
@@ -73,6 +74,13 @@ REWARD_MODEL_CONFIG = {
     "TIGER-Lab/AceCodeRM-32B": {
         "model_builder": Qwen2ForCausalRM.from_pretrained,
         "pipeline_builder": AceCoderPipeline,
+        "quantized": False,
+        "custom_dialogue": False,
+        "model_type": "Casual LM",
+    },
+    "CodeDPO/AceCodeRM-LLama3.1-8B": {
+        "model_builder": AceCoderLlamaForCausalRM.from_pretrained,
+        "pipeline_builder": AceCoderPipeline_Llama,
         "quantized": False,
         "custom_dialogue": False,
         "model_type": "Casual LM",
