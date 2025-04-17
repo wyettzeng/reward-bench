@@ -38,7 +38,7 @@
 #     --trust_remote_code 
 
 python rm_bench_scripts/run_rm.py \
-    --model CodeDPO/AceCodeRM-LLama3.1-8B \
+    --model CodeDPO/AceCodeRM-LLama3.1-8B-v2 \
     --datapath rm_bench_data/total_dataset.json \
     --batch_size 16 \
     --trust_remote_code 

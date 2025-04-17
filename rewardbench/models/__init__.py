@@ -85,6 +85,13 @@ REWARD_MODEL_CONFIG = {
         "custom_dialogue": False,
         "model_type": "Casual LM",
     },
+    "CodeDPO/AceCodeRM-LLama3.1-8B-v2": {
+        "model_builder": AceCoderLlamaForCausalRM.from_pretrained,
+        "pipeline_builder": AceCoderPipeline_Llama,
+        "quantized": False,
+        "custom_dialogue": False,
+        "model_type": "Casual LM",
+    },
     "ShikaiChen/LDL-Reward-Gemma-2-27B-v0.1": {
         "model_builder": LDLRewardModel27B.from_pretrained,
         "pipeline_builder": LDLPipeline,
